@@ -1,5 +1,5 @@
 
-
+  
   dt<-read.table("ExData_Plotting1/household_power_consumption.txt",sep=";", nrows = 2880,skip = 66637,stringsAsFactors = FALSE)
   cnames<-read.table("ExData_Plotting1/household_power_consumption.txt",sep=";", nrows = 1,stringsAsFactors = FALSE)
   colnames(dt)<-cnames
@@ -10,6 +10,7 @@
   
   png("ExData_Plotting1/plot4.png", width=480, height=480)
   
+  #With the par( ) function, it easy to combine multiple plots into one overall graph.
   graphs <- par(mfrow=c(2, 2))
   
   plot(dt1$timestamp,dt1$Global_active_power,type = "n", xlab="", ylab="Global Active Power(kilowatts)")
@@ -27,7 +28,7 @@
   
   plot(dt1$timestamp,dt1$Global_reactive_power,type = "n", xlab="datetime", ylab="Global_reactive_power")
   lines(dt1$timestamp,dt1$Global_reactive_power,type = "l")
-  
+
   par(graphs)
 
   dev.off()
